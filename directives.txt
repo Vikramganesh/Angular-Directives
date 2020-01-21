@@ -1,0 +1,118 @@
+Directives are elements whitch change the appearence or behavior of the DOM elements.
+There are three types of Directives.
+
+components----->  Directives with Own Template.
+
+Structual------> Change DOM by adding or removing elements.
+
+Attribute------> Change Appearance or behavior of the DOM.(styling color...)
+
+
+Component Directive:
+====================
+
+Component is also a type of directive with template,styles and logic part which is most
+famous type ofdirective.
+  Ex: 
+       employee
+            -> employee.component.css
+            -> employee.component.html
+            -> employee.component.ts
+            -> employee.component.spec.ts(testing purpose)
+
+Structual Directive:
+====================
+
+this directives are responsible for the html layout.this directives shape
+or reshape the html view by simply adding or removing the elements in the
+DOM.
+
+Three Type of Structural Directives:
+   1. *ngIf
+   2. *ngFor
+   3. *ngSwitch
+
+   *ngIf:
+  ======
+
+     <p *ngIf="isValid">This is the paragraph</p>
+
+     here isValid is a variable declare in .ts file.
+     if it is true paraagraph is display.
+     if it is false paragraph is notdisplay.
+  *ngIf,else:
+  ===========
+      <div *ngIf="isValid";else elseblock>
+      
+      </div>
+      <ng-template #elseblock>
+
+      </ng-template>
+
+ *ngIf,then else:
+  ==============
+      <div *ngIf="condition";then thenblock else elseblock>
+      
+      </div>
+      <ng-template #thenblock>
+
+      </ng-template>
+      <ng-template #elseblock>
+
+      </ng-template>
+  Note:<ng-template> is an Angular element used to render HTML templates.If you see the output it will display only ng-template works which is in div element
+
+
+  ngSwitch:
+===========
+  the ngSwitch directive lets you hide/show html elements depending on an expression.
+             --> ngSwitch
+             --> ngSwitchCase
+             --> ngSwitchDefault
+
+  <select  (change)=setValue($event)>
+	<option value="">select</option>
+	<option value="one">one</option>
+	<option value="two">two</option>
+ </select>
+
+ choice='';
+ setValue(a){
+    this.choice = a.target.value;
+ }
+
+<div [ngSwitch]="choice">
+	<h3 *ngSwitchCase="'one'">ONE</h3> 
+	<h3 *ngSwitchCase="'two'">TWO</h3> 
+	<h3 *ngSwitchDefault>DEFAULT</h3> 
+
+</div>
+
+*ngFor:
+======
+  it is used to repeate a given html template once for each value in an array.
+  *ngFor="let <value> of <collection>"
+
+  *ngFor="let <value> of <collection>; let i=index"
+ 
+Note: ngFor iterates the array of elements by using '.' operator.
+
+
+Attribute Directives:
+=====================
+
+Attribute directives is a way to modify the appearance of the DOM element.
+Two type of build-in Attribute Directives
+   1.ngStyle
+   2.ngClass
+
+ngStyle:
+========
+
+<p [ngStyle]="{'color':'red'}">This is ngStyle Directive</p>
+
+Dynamically Change the color
+
+<div [ngStyle]="{'background-color': person.country ==='UK' ? 'green'}">
+
+</div> 
