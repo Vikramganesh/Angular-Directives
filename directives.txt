@@ -106,8 +106,8 @@ Two type of build-in Attribute Directives
    1.ngStyle
    2.ngClass
 
-ngStyle:
-========
+ngStyle and ngClass
+===================
 
 <p [ngStyle]="{'color':'red'}">This is ngStyle Directive</p>
 
